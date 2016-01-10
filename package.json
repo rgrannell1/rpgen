@@ -2,6 +2,10 @@
   "name": "rpgen",
   "version": "0.1.0",
   "description": "",
+  "bin": {
+    "rpgen": "node_modules/rpgen/cli/rpgen.js"
+  },
+  "preferGlobal": true,
   "scripts": {},
   "author": "",
   "license": "MIT",
