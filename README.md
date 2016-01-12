@@ -1,5 +1,13 @@
 
-# rpgen
+# Rpgen v0.1.0
+
+Generate a high entropy, memorable password.
+
+## Usage
+
+```
+rpgen --help
+```
 
 
 
