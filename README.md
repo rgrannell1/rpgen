@@ -18,6 +18,9 @@ The output is of the format `<password> <dictionaryEntropy> <characterEntropy>`
 ```
 houstonlarynxbacardibleaklycalipering    80    194
 ```
+### "houstonlarynxbacardibleaklycalipering isn't *that* memorable"
+
+It's more memorable than `yIRXLbae6ixc0BXXtYxG`.
 
 
 
@@ -27,7 +30,8 @@ houstonlarynxbacardibleaklycalipering    80    194
 ### Random Word Selection
 
 Random words are selected using a cryptographically secure random number generator derived from
-Node.js's `crypto.randomBytes`.
+Node.js's `crypto.randomBytes`. This generator is tested against `dieharder` to ensure it works as
+expected.
 
 
 
