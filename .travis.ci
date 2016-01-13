@@ -1,0 +1,5 @@
+sudo: required
+services:
+  - docker
+install: make docker-build
+script:  make docker-run
