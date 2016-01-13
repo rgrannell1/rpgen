@@ -18,9 +18,10 @@ The output is of the format `<password> <dictionaryEntropy> <characterEntropy>`
 ```
 houstonlarynxbacardibleaklycalipering    80    194
 ```
-### "houstonlarynxbacardibleaklycalipering isn't *that* memorable"
+### "houstonlarynxbacardibleaklycalipering isn't *that* memorable."
 
 It's more memorable than `yIRXLbae6ixc0BXXtYxG`.
+
 
 
 

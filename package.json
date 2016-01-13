@@ -10,7 +10,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "is": "rgrannell/is",
     "docopt": "^0.6.2"
   }
 }
