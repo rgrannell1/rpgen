@@ -32,9 +32,11 @@ const args       = docopt(doc)
 
 
 
-
-
-const canvas = new nodeCanvas(constants.width, constants.height)
+const dimensions = {
+	height: parseInt(args['--height'], 10),
+	width:  parseInt(args['--width'], 10)
+}
+const canvas = new nodeCanvas(dimensions.width, dimensions.height)
 const ctx    = canvas.getContext('2d')
 
 
@@ -43,13 +45,17 @@ const ctx    = canvas.getContext('2d')
 
 const randomNumberPNG = (ith, jth, callback) => {
 
-	if (ith === constants.width && jth === constants.height) {
+	if (ith === dimensions.width && jth === dimensions.height) {
 		callback( )
-	} else if (ith > constants.width) {
+	} else if (ith > dimensions.width) {
 		randomNumberPNG(0, jth + 1, callback)
 	} else {
 
 		rand((err, num) => {
+
+			if (err) {
+				throw err
+			}
 
 			ctx.fillStyle = num >= 0.5 ? "black" : "white"
 			ctx.fillRect(ith, jth, 1, 1)
@@ -68,7 +74,6 @@ const randomNumberPNG = (ith, jth, callback) => {
 randomNumberPNG(0, 0, ( ) => {
 
 	ctx.save( )
-
 	canvas.createPNGStream( ).on('data', chunk => {
 		process.stdout.write(chunk)
 	})
