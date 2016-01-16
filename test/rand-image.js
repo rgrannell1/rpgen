@@ -10,7 +10,19 @@ const nodeCanvas = require('canvas')
 const fs         = require('fs')
 
 
-const canvas     = new nodeCanvas(512, 512)
+
+
+
+const constants  = {
+	width:  512,
+	height: 512
+}
+
+
+
+
+
+const canvas     = new nodeCanvas(constants.width, constants.height)
 const ctx        = canvas.getContext('2d')
 
 
@@ -19,20 +31,15 @@ const ctx        = canvas.getContext('2d')
 
 const randomNumberPNG = (ith, jth, callback) => {
 
-	if (ith === 512 && jth === 512) {
+	if (ith === constants.width && jth === constants.height) {
 		callback( )
-	} else if (ith > 512) {
+	} else if (ith > constants.width) {
 		randomNumberPNG(0, jth + 1, callback)
 	} else {
 
 		rand((err, num) => {
 
-			if (num >= 0.5) {
- 				ctx.fillStyle = "black"
-			} else {
- 				ctx.fillStyle = "white"
-			}
-
+			ctx.fillStyle = num >= 0.5 ? "black" : "white"
 			ctx.fillRect(ith, jth, 1, 1)
 
 			randomNumberPNG(ith + 1, jth, callback)

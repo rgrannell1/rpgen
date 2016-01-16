@@ -1,13 +1,23 @@
 
 FROM ubuntu:15.10
 
-RUN apt-get update && apt-get install -y \
-	npm \
-	curl \
-	git \
+RUN apt-get update && apt-get install --yes \
+	npm                \
+	curl               \
+	git                \
+	dieharder          \
+	libcairo2-dev      \
+	libjpeg8-dev       \
+	libpango1.0-dev    \
+	libgif-dev         \
+	build-essential    \
+	g++                \
 	build-essential && \
-	dieharder && \
 	rm -rf /var/lib/apt/lists/*
+
+
+
+
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
@@ -30,7 +40,5 @@ COPY . /src
 
 WORKDIR /src
 RUN npm link && npm install -g
-
-EXPOSE 8025
 
 CMD ["bash", "test/install-test.sh"]
