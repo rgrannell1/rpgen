@@ -1,4 +1,5 @@
 
+NODE           = node
 DOCKER         = docker
 CONTAINER_NAME = rpgen
 
@@ -17,6 +18,9 @@ docker-cleanbuild:
 
 docker-run:
 	$(DOCKER) run $(CONTAINER_NAME)
+
+display-rng:
+	$(NODE) test/rand-image.js | display -
 
 eslint:
 	$(ESLINT) $(ESLINT_FLAGS) lib
