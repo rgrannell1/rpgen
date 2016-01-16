@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 "use strict"
 
@@ -5,28 +6,22 @@
 
 
 
-const rand       = require('rpgen/crypto/rand-int')
-const nodeCanvas = require('canvas')
+const doc = `
+Usage:
+	rand [-n NUM | --number NUM]
 
-
-const canvas     = new nodeCanvas(512, 512)
-const ctx        = canvas.getContext('2d')
-
-for (let ith = 0; ith < 512; ++ith) {
-	for (let jth = 0; jth < 512; ++jth) {
-
-		ctx.fillRect(ith, jth, 1, 1)
-
-	}
-}
+Options:
+	-n NUM, --number NUM    [default: 10000]
+`
 
 
 
 
+const rand     = require('rpgen/crypto/rand-int')
+const docopt   = require('docopt').docopt
+const args     = docopt(doc)
 
-const required = process.argv[2]
-
-
+const required = parseInt(args['--number'], 10)
 
 
 

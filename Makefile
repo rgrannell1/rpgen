@@ -24,3 +24,6 @@ display-rng:
 
 eslint:
 	$(ESLINT) $(ESLINT_FLAGS) lib
+
+dieharder:
+	bash test/test-random-numbers.sh
