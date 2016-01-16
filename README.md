@@ -30,6 +30,8 @@ It's more memorable than `yIRXLbae6ixc0BXXtYxG`.
 
 ### Random Word Selection
 
+![Random Data Bitmap](rand-image.png)
+
 Random words are selected using a cryptographically secure random number generator derived from
 Node.js's `crypto.randomBytes`. This generator is tested against `dieharder` to ensure it works as
 expected.

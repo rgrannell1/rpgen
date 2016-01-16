@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 "use strict"
 
@@ -5,25 +6,36 @@
 
 
 
+const doc = `
+Usage:
+	rand-image [-w WIDTH | --width WIDTH] [-h HEIGHT| --height HEIGHT]
+
+Options:
+	-w WIDTH, --width WIDTH       [default: 512]
+	-h HEIGHT, --height HEIGHT    [default: 512]
+`
+
+
+
+
 const rand       = require('rpgen/crypto/rand-int')
+
+
+
+
+const docopt     = require('docopt').docopt
 const nodeCanvas = require('canvas')
 const fs         = require('fs')
 
-
-
-
-
-const constants  = {
-	width:  512,
-	height: 512
-}
+const args       = docopt(doc)
 
 
 
 
 
-const canvas     = new nodeCanvas(constants.width, constants.height)
-const ctx        = canvas.getContext('2d')
+
+const canvas = new nodeCanvas(constants.width, constants.height)
+const ctx    = canvas.getContext('2d')
 
 
 
