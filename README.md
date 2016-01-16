@@ -16,9 +16,9 @@ $ rpgen
 The output is of the format `<password> <dictionaryEntropy> <characterEntropy>`
 
 ```
-houstonlarynxbacardibleaklycalipering    80    194
+stacking-patty-divergent-tiresome-deviants   80   199
 ```
-### "houstonlarynxbacardibleaklycalipering isn't *that* memorable."
+### "stacking-patty-divergent-tiresome-deviants isn't *that* memorable."
 
 It's more memorable than `yIRXLbae6ixc0BXXtYxG`.
 
