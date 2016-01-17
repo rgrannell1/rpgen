@@ -53,7 +53,7 @@ The second included entropy, the dictionary entropy, is the entropy of the passw
 
 ## Testing
 
-### Bitmap Test
+### Random Bitmap Test
 
 rpgen passes the superficial but important "random-bitmap" test:
 
@@ -71,7 +71,7 @@ make display-rng
 
 ### Dieharder
 
-
+rpgen was also tested against 100,000,000 (1.1Gb) random integers.
 
 
 
