@@ -51,13 +51,13 @@ const randomNumberPNG = (ith, jth, callback) => {
 		randomNumberPNG(0, jth + 1, callback)
 	} else {
 
-		rand((err, num) => {
+		rand.randFloat((err, num) => {
 
 			if (err) {
 				throw err
 			}
 
-			ctx.fillStyle = num >= 0.5 ? "black" : "white"
+			ctx.fillStyle = num >= (1 / 2) ? "black" : "white"
 			ctx.fillRect(ith, jth, 1, 1)
 
 			randomNumberPNG(ith + 1, jth, callback)
