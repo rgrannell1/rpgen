@@ -36,6 +36,14 @@ Random words are selected using a cryptographically secure random number generat
 Node.js's `crypto.randomBytes`. This generator is tested against `dieharder` to ensure it works as
 expected.
 
+### Entropy
+
+A password's information entropy quantifies its resistance to brute-force attacks. For example, it would take up to `2e80 ~ 1.2e+24` attempts to guess a password with `80` bits of entropy.
+
+```
+entropy = log2( number-of-possible-symbols ^ { number-of-symbols-used  } )
+```
+
 
 
 
