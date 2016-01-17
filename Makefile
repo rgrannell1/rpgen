@@ -23,7 +23,7 @@ display-rng:
 	$(NODE) test/rand-image.js | display -
 
 eslint:
-	$(ESLINT) $(ESLINT_FLAGS) lib
+	$(ESLINT) $(ESLINT_FLAGS) rpgen
 
 dieharder:
 	bash test/test-random-numbers.sh
