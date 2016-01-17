@@ -13,7 +13,7 @@ Generate a high entropy, memorable password.
 $ rpgen --help
 $ rpgen
 ```
-The output is of the format `<password> <dictionaryEntropy> <characterEntropy>`
+The output is of the format `<password> <dictionaryEntropy> <characterEntropy>`; see `Security` for notes on entropy.
 
 ```
 stacking-patty-divergent-tiresome-deviants   80   199
