@@ -62,7 +62,7 @@ rpgen passes the superficial but important "random-bitmap" test:
 
 for comparison, PHPs `rand( )` does not
 
-https://www.random.org/analysis/randbitmap-wamp-section.png
+![PHP Random Data](https://www.random.org/analysis/randbitmap-wamp-section.png)
 
 ```
 make display-rng
