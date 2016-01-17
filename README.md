@@ -44,6 +44,9 @@ A password's information entropy quantifies its resistance to brute-force attack
 entropy = log2( number-of-possible-symbols ^ { number-of-symbols-used  } )
 ```
 
+The character entropy indicates the entropy of the password when a 'naive' attack is carried out; that is, if the password is 100 characters long the attacker is brute-forcing all combinations of 100 characters. This
+is a reasonable assumption for many brute-force attacks, especially if you use a private input dictionary rather
+than the stock one supplied with this tool.
 
 
 
