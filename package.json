@@ -1,15 +1,25 @@
 {
   "name": "rpgen",
   "version": "0.1.0",
-  "description": "",
+  "description": "Generate a high entropy, memorable password.",
   "bin": {
     "rpgen": "node_modules/rpgen/cli/rpgen.js"
   },
   "preferGlobal": true,
   "scripts": {},
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rgrannell1/rpgen"
+  },
+  "author": "Ryan Grannell <r.grannell2@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": ">=5.0.0",
+    "npm":  ">=3.3.7"
+  },
   "devDependencies": {
+    "eslint": "^1.9.0",
+    "babel-eslint": ">=4.1.4",
     "canvas": "^1.3.7"
   },
   "dependencies": {

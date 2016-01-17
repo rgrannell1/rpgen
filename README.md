@@ -51,6 +51,18 @@ than the stock one supplied with this tool.
 The second included entropy, the dictionary entropy, is the entropy of the password when each combination of words is brute-forced. This entropy will be much lower, but under this view the password should still be secure.
 
 
+
+
+
+## Testing
+
+
+
+
+
+
+
+
 ## Requirements
 
 - Node.js >= v5.0.0
