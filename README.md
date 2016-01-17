@@ -31,8 +31,7 @@ It's more memorable than `yIRXLbae6ixc0BXXtYxG`.
 ### Random Word Selection
 
 Random words are selected using a cryptographically secure random number generator derived from
-Node.js's `crypto.randomBytes`. This generator is tested against `dieharder` to ensure it works as
-expected.
+Node.js's `crypto.randomBytes`. This generator is tested, as described below.
 
 ### Entropy
 
@@ -64,9 +63,13 @@ for comparison, PHPs `rand( )` does not
 
 ![PHP Random Data](https://www.random.org/analysis/randbitmap-wamp-section.png)
 
+To run this test yourself, use:
+
 ```
 make display-rng
 ```
+
+### Dieharder
 
 
 
