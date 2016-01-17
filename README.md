@@ -36,6 +36,12 @@ Random words are selected using a cryptographically secure random number generat
 Node.js's `crypto.randomBytes`. This generator is tested against `dieharder` to ensure it works as
 expected.
 
+### Dictionary Entropy
+
+```
+entropy = log2( number-of-possible-symbols ^ { number-of-symbols-used  } )
+```
+
 
 
 
