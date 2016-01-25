@@ -30,11 +30,8 @@ It's more memorable than `yIRXLbae6ixc0BXXtYxG`.
 
 ### Random Word Selection
 
-![Random Data Bitmap](rand-image.png)
-
 Random words are selected using a cryptographically secure random number generator derived from
-Node.js's `crypto.randomBytes`. This generator is tested against `dieharder` to ensure it works as
-expected.
+Node.js's `crypto.randomBytes`. This generator is tested, as described below.
 
 ### Entropy
 
@@ -56,8 +53,25 @@ The second included entropy, the dictionary entropy, is the entropy of the passw
 
 ## Testing
 
+### Random Bitmap Test
 
+rpgen passes the superficial but important "random-bitmap" test:
 
+![Random Data Bitmap](rand-image.png)
+
+for comparison, PHPs `rand( )` does not
+
+![PHP Random Data](https://www.random.org/analysis/randbitmap-wamp-section.png)
+
+To run this test yourself, use:
+
+```
+make display-rng
+```
+
+### Dieharder
+
+rpgen was also tested against 100,000,000 (1.1Gb) random integers.
 
 
 
