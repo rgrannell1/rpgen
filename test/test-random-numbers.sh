@@ -15,8 +15,8 @@ node "test/rand.js" --number 0 --start >> $dataPath
 
 
 
-perLoop=1000
-loops=1000
+perLoop=50000
+loops=2000
 total="$(($perLoop * $loops))"
 
 echo 'PRNG randombytes-derivative' >> $dataPath
