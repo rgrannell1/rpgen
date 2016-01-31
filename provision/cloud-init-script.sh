@@ -13,18 +13,41 @@ touch "$testPath"
 
 
 
-# install docker.
+function install-docker {
 
-wget -qO- https://get.docker.com/ | sh >> "$logPath"
+	# install docker.
+	wget -qO- https://get.docker.com/
+
+}
+
+function install-others {
+
+	sudo apt-get install --assume-yes \
+		git                           \
+		build-essential >> "$logPath"
+
+}
+
+
+
+
+# a rigourous way of ensuring the network is available...
+sleep 60
+
+
+
+
+install-docker >> "$logPath"
+install-others >> "$logPath"
+
+
+
+
 
 # install git, make.
 
-sudo apt-get install --assume-yes \
-	git                           \
-	build-essential >> "$logPath"
-
-git clone https://github.com/rgrannell1/pguests.git >> "$logPath"
-cd pguests
+git clone https://github.com/rgrannell1/rpgen.git >> "$logPath"
+cd rpgen
 
 
 
