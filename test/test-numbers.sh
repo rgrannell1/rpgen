@@ -13,7 +13,8 @@ dataPath=test/data.txt
 echo '' > $dataPath
 node "test/rand.js" --number 0 --start > $dataPath
 
-total=1000
+# one billion numbers.
+total=1000000000
 
 echo 'PRNG randombytes-derivative' >> $dataPath
 echo 'type: d'                     >> $dataPath

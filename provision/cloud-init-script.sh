@@ -16,7 +16,7 @@ touch "$testPath"
 function install-docker {
 
 	# install docker.
-	wget -qO- https://get.docker.com/
+	wget -qO- https://get.docker.com/ | sh
 
 }
 
