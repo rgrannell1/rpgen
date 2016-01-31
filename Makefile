@@ -10,13 +10,22 @@ ESLINT_FLAGS   = --config config/eslint.json
 
 
 
-docker-build:
-	$(DOCKER) build --tag=$(CONTAINER_NAME) .
+docker-test-numbers-build:
+	$(DOCKER) build --tag=$(CONTAINER_NAME)-test-numbers -f dockerfiles/test-numbers .
 
-docker-cleanbuild:
-	$(DOCKER) build --no-cache=true --tag=$(CONTAINER_NAME) .
+docker-test-numbers-cleanbuild:
+	$(DOCKER) buildl --no-cache=true --tag=$(CONTAINER_NAME)-test-numbers -f dockerfiles/test-numbers .
 
-docker-run:
+docker-test-numbers-run:
+	$(DOCKER) run $(CONTAINER_NAME)-test-numbers
+
+docker-test-install-build:
+	$(DOCKER) build --tag=$(CONTAINER_NAME)-test-install -f dockerfiles/test-install .
+
+docker-test-install-cleanbuild:
+	$(DOCKER) build --no-cache=true --tag=$(CONTAINER_NAME)-test-install -f dockerfiles/test-install .
+
+docker-test-install-run:
 	$(DOCKER) run $(CONTAINER_NAME)
 
 display-rng:

@@ -3,3 +3,5 @@ node_modules/*
 npm-debug.log
 test-data.txt
 diehard-output.txt
+security/
+digital-ocean-token

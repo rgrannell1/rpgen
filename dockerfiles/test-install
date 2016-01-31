@@ -41,4 +41,4 @@ COPY . /src
 WORKDIR /src
 RUN npm link && npm install -g
 
-CMD ["bash", "test/install-test.sh"]
+CMD ["bash", "test/test-install.sh"]

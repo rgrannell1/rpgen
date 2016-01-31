@@ -37,7 +37,7 @@ const required = parseInt(args['--number'], 10)
 
 
 
-const callback = (err, number) => {
+const printMessage = (err, number) => {
 
 	const numString = number.toString( )
 	const message   = commons.string.repeat(10, ' ').slice(0, 10 - numString.length) + numString
@@ -50,6 +50,21 @@ const callback = (err, number) => {
 
 
 
-for (let ith = 0; ith < required; ++ith) {
-	rand.randInt32(callback)
+var recurPrint = countLeft => {
+
+	if (countLeft > 0) {
+		rand.randInt32((err, num) => {
+
+			printMessage(err, num)
+			recurPrint(countLeft - 1)
+
+		})
+	}
+
 }
+
+
+
+
+
+recurPrint(required)
