@@ -16,7 +16,7 @@ vmConfig=$(node provision/vm-config.js)
 
 
 
-curl -X POST "https://api.digitalocean.com/v2/droplets" \
+curl -sS -X POST "https://api.digitalocean.com/v2/droplets" \
 	-d "$vmConfig"                                      \
 	-H "Authorization: Bearer $digitalOceanToken"       \
 	-H "Content-Type: application/json"                 \

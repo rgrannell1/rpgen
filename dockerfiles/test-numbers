@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install --yes \
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN npm cache clean -f
-RUN npm install -g \
+RUN npm install --global \
 	n
 
 
@@ -39,6 +39,6 @@ RUN n stable
 COPY . /src
 
 WORKDIR /src
-RUN npm link && npm install -g
+RUN npm link && npm install --global
 
 CMD ["bash", "test/test-numbers.sh"]

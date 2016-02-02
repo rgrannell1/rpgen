@@ -2,7 +2,16 @@
 
 
 
+
+
+DEBIAN_FRONTEND=noninteractive
+
+
+
+
+
 cd ~
+
 logPath=install.log
 testPath=install.log
 
@@ -15,8 +24,12 @@ touch "$testPath"
 
 function install-docker {
 
-	# install docker.
-	wget -qO- https://get.docker.com/ | sh
+	sudo apt-get -y install docker.io
+
+	ln -sf /usr/bin/docker.io /usr/local/bin/docker
+	update-rc.d docker defaults
+
+	sudo service docker start
 
 }
 
@@ -24,7 +37,7 @@ function install-others {
 
 	sudo apt-get install --assume-yes \
 		git                           \
-		build-essential >> "$logPath"
+		build-essential
 
 }
 
@@ -36,6 +49,11 @@ sleep 60
 
 
 
+sudo apt-get install linux-image-extra-`uname -r`
+
+
+
+
 
 install-docker >> "$logPath"
 install-others >> "$logPath"
@@ -44,7 +62,12 @@ install-others >> "$logPath"
 
 
 
-# install git, make.
+if [[ -d "rpgen" ]]
+then
+
+	rm -rf rpgen
+
+fi
 
 git clone https://github.com/rgrannell1/rpgen.git >> "$logPath"
 cd rpgen
