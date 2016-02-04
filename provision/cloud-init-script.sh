@@ -12,12 +12,6 @@ DEBIAN_FRONTEND=noninteractive
 
 cd ~
 
-logPath=install.log
-testPath=install.log
-
-touch "$logPath"
-touch "$testPath"
-
 
 
 
@@ -55,8 +49,8 @@ sudo apt-get install linux-image-extra-`uname -r`
 
 
 
-install-docker >> "$logPath"
-install-others >> "$logPath"
+install-docker
+install-others
 
 
 
@@ -64,15 +58,13 @@ install-others >> "$logPath"
 
 if [[ -d "rpgen" ]]
 then
-
 	rm -rf rpgen
-
 fi
 
-git clone https://github.com/rgrannell1/rpgen.git >> "$logPath"
+git clone https://github.com/rgrannell1/rpgen.git
 cd rpgen
 
 
 
 
-make docker-test-numbers-build docker-test-numbers-run >> "$testPath"
+make docker-test-numbers-build docker-test-numbers-run
