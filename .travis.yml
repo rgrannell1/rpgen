@@ -1,5 +1,5 @@
 sudo: required
 services:
   - docker
-install: docker-test-install-build
-script:  docker-test-install-run
+install: make docker-test-install-build
+script:  make docker-test-install-run
