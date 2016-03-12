@@ -22,7 +22,7 @@ docker-test-numbers-cleanbuild:
 	$(DOCKER) build --no-cache=true --tag=$(TEST_NUMBERS_CONTAINER) -f dockerfiles/test-numbers .
 
 docker-test-numbers-run:
-	$(DOCKER) run $TEST_NUMBERS_CONTAINER
+	$(DOCKER) run $(TEST_NUMBERS_CONTAINER)
 
 docker-test-install-build:
 	$(DOCKER) build --tag=$(TEST_INSTALL_CONTAINER) -f dockerfiles/test-install .
@@ -31,7 +31,7 @@ docker-test-install-cleanbuild:
 	$(DOCKER) build --no-cache=true --tag=$(TEST_INSTALL_CONTAINER) -f dockerfiles/test-install .
 
 docker-test-install-run:
-	$(DOCKER) run $(CONTAINER_NAME)
+	$(DOCKER) run $(TEST_INSTALL_CONTAINER)
 
 display-rng:
 	$(NODE) test/rand-image.js | display -
