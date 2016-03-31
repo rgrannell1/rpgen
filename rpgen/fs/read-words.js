@@ -6,7 +6,7 @@
 
 const fs         = require('fs')
 const readline   = require('readline')
-const constants  = require('rpgen/commons/constants')
+const constants  = require('../commons/constants')
 
 
 

@@ -39,7 +39,7 @@ Arguments:
 
 
 const docopt = require('docopt').docopt
-const rpgen  = require('rpgen/app/rpgen')
+const rpgen  = require('../app/rpgen')
 const args   = docopt(doc)
 
 

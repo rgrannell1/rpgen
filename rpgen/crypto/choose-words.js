@@ -4,10 +4,10 @@
 
 
 
-const rand      = require('rpgen/crypto/rand-int')
-const commons   = require('rpgen/commons/commons')
-const readWords = require('rpgen/fs/read-words')
-const entropy   = require('rpgen/crypto/entropy')
+const rand      = require('../crypto/rand-int')
+const commons   = require('../commons/commons')
+const readWords = require('../fs/read-words')
+const entropy   = require('../crypto/entropy')
 
 
 

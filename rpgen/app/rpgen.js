@@ -6,9 +6,9 @@
 
 const path        = require('path')
 
-const constants   = require('rpgen/commons/constants')
-const chooseWords = require('rpgen/crypto/choose-words')
-const showOutput  = require('rpgen/app/show-output')
+const constants   = require('../commons/constants')
+const chooseWords = require('../crypto/choose-words')
+const showOutput  = require('../app/show-output')
 
 
 
