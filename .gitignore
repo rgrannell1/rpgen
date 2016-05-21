@@ -5,3 +5,5 @@ test-data.txt
 diehard-output.txt
 security/
 digital-ocean-token
+snapcraft/*
+!snapcraft.yaml

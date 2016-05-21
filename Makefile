@@ -41,3 +41,12 @@ eslint:
 
 dieharder:
 	bash test/test-random-numbers.sh
+
+
+install: snap
+	cd snapcraft && snap install rpgen* && cd ..
+
+snap: FORCE
+	cd snapcraft && snapcraft clean && snapcraft snap && cd ..
+
+FORCE:
