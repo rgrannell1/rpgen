@@ -44,7 +44,7 @@ rpgen.preprocess.fpath = rawArgs => {
 
 	} else if (constants.dictionaries.indexOf(dictionary) !== -1) {
 
-		fpath = path.resolve(path.join(__dirname, '../../..'), `data/${dictionary}.txt` )
+		fpath = path.resolve(path.join(__dirname, '..'), `data/${dictionary}.txt` )
 
 	} else {
 
