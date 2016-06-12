@@ -48,7 +48,7 @@ rpgen.preprocess.fpath = rawArgs => {
 
 	} else {
 
-		console.error(`dictionary named "${dictionary}" does not exist in list of options "${constants.dictionaries}"`)
+		console.error(`dictionary named "${dictionary}" does not exist in list of options "${constants.dictionaries.join(', ')}"`)
 		process.exit(1)
 
 	}

@@ -2,6 +2,7 @@ name:        rpgen
 version:     v0.1.0
 summary:     compile multiple scripts into a single cloud-init friendly script
 description: compile multiple scripts into a single cloud-init friendly script
+confinement: strict
 
 apps:
   rpgen:
