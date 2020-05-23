@@ -1,5 +1,5 @@
 
-# Rpgen v0.2.0 [![Build Status](https://travis-ci.org/rgrannell1/rpgen.svg)](https://travis-ci.org/rgrannell1/rpgen)
+# Rpgen v0.2.0
 
 Generate a high entropy, memorable password.
 
