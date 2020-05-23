@@ -1,4 +1,10 @@
 
+/**
+ * Display password information.
+ *
+ * @param {Object} args configuration options
+ * @param {Object} data password data
+ */
 const showOutput = (args, data) => {
 	let message = data.selected.join(args.delimiter)
 

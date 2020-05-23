@@ -1,8 +1,10 @@
 name:        rpgen
-version:     v0.1.0
+version:     v0.2.0
 summary:     compile multiple scripts into a single cloud-init friendly script
 description: compile multiple scripts into a single cloud-init friendly script
 confinement: strict
+base: core18
+grade: stable
 
 apps:
   rpgen:
@@ -10,6 +12,7 @@ apps:
 
 parts:
   rpgen:
+    source: .
     plugin: nodejs
-    node-packages:
-      - rgrannell1/rpgen
+    nodejs-version: 14.3.0
+    nodejs-package-manager: yarn

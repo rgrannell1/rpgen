@@ -1,5 +1,5 @@
 
-# Rpgen v0.1.0 [![Build Status](https://travis-ci.org/rgrannell1/rpgen.svg)](https://travis-ci.org/rgrannell1/rpgen)
+# Rpgen v0.2.0 [![Build Status](https://travis-ci.org/rgrannell1/rpgen.svg)](https://travis-ci.org/rgrannell1/rpgen)
 
 Generate a high entropy, memorable password.
 
@@ -39,10 +39,6 @@ than the stock one supplied with this tool.
 
 The second included entropy, the dictionary entropy, is the entropy of the password when each combination of words is brute-forced. This entropy will be much lower, but under this view the password should still be secure.
 
-
-
-
-
 ## Testing
 
 ### Random Bitmap Test
@@ -55,46 +51,18 @@ for comparison, PHPs `rand( )` does not
 
 ![PHP Random Data](https://www.random.org/analysis/randbitmap-wamp-section.png)
 
-To run this test yourself, use:
-
-```
-make display-rng
-```
-
 ### Dieharder
 
 rpgen was also tested against 100,000,000 (1.1Gb) random integers.
-
-
-
-
-
-## Requirements
-
-- Node.js >= v5.0.0
-
-
-
-
 
 ## License
 
 The MIT License
 
-Copyright (c) 2016 Ryan Grannell
+Copyright (c) 2020 Róisín Grannell
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
-
-
-### Versioning
-
-Versioning complies with the Semantic Versioning 2.0.0 standard.
-
-http://semver.org/

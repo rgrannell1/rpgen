@@ -5,6 +5,12 @@ const constants = require('../commons/constants')
 const chooseWords = require('../crypto/choose-words')
 const showOutput = require('../app/show-output')
 
+/**
+ * Run the application
+ *
+ * @param {Object} rawArgs rpgen args
+ *
+ */
 const rpgen = async rawArgs => {
 	const args = rpgen.validate(rpgen.preprocess(rawArgs))
 
@@ -12,6 +18,13 @@ const rpgen = async rawArgs => {
 	showOutput(args, data)
 }
 
+/**
+ * Process rpgen arguments.
+ *
+ * @param {Object} rawArgs rpgen args
+ *
+ * @returns {object} rename and process rpgen arguments
+ */
 rpgen.preprocess = rawArgs => {
 	return {
 		number: parseInt(rawArgs['--num'], 10),
@@ -22,6 +35,13 @@ rpgen.preprocess = rawArgs => {
 	}
 }
 
+/**
+ * Process the fpath argument
+ *
+ * @param {Object} rawArgs rpgen args
+ *
+ * @returns {string} a file path
+ */
 rpgen.preprocess.fpath = rawArgs => {
 
 	var fpath
@@ -39,6 +59,13 @@ rpgen.preprocess.fpath = rawArgs => {
 	process.exit(1)
 }
 
+/**
+ * Validate the provided arguments.
+ *
+ * @param {Object} rpgen args
+ *
+ * @returns {Object} rgpen args
+ */
 rpgen.validate = args => {
 	if (args.number === 0) {
 		console.error('rpgen: cannot create length-zero password.')

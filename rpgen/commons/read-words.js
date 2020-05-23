@@ -5,10 +5,22 @@ const constants = require('../commons/constants')
 
 const createInput = { }
 
+/**
+ * Return stdin
+ *
+ * @returns {Stream}
+ */
 createInput.stdin = async () => {
 	return process.stdin
 }
 
+/**
+ * Return a read stream to a file-path.
+ *
+ * @param {string} fpath the dictionary file-path
+ *
+ * @returns {Promise<Stream>} a read stream
+ */
 createInput.fpath = fpath => {
 	const isReadableFlag = fs.R_OK
 
@@ -37,6 +49,13 @@ createInput.fpath = fpath => {
 	})
 }
 
+/**
+ * Read lines of words from a dictionary
+ *
+ * @param {string} fpath the file-path to a dictionary
+ *
+ * @returns {Promise<Array<string>>} lines from the dictionary
+ */
 const readWords = async fpath => {
 	const lines = [ ]
 	const inputSource = createInput[fpath ? 'fpath' : 'stdin']

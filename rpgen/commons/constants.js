@@ -1,5 +1,6 @@
 
 const constants = {
+	packageJson: require('../../package'),
 	charCodes: {
 		NEWLINE: 10
 	},

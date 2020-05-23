@@ -1,13 +1,15 @@
 
 const rand = require('../crypto/rand-int')
 const commons = require('../commons/commons')
-const readWords = require('../fs/read-words')
+const readWords = require('../commons/read-words')
 const entropy = require('../crypto/entropy')
 
 /**
  * Select random words
  *
  * @param {Object} args misc options
+ *
+ * @returns {Promise<Object>} password information
  */
 const chooseWords = async args => {
 	const fpath = args.stdin
