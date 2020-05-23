@@ -3,10 +3,6 @@
 
 Generate a high entropy, memorable password.
 
-
-
-
-
 ## Usage
 
 ```
@@ -21,10 +17,6 @@ stacking-patty-divergent-tiresome-deviants   80   199
 ### "stacking-patty-divergent-tiresome-deviants isn't *that* memorable."
 
 It's more memorable than `yIRXLbae6ixc0BXXtYxG`.
-
-
-
-
 
 ## Security
 

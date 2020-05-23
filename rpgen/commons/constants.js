@@ -1,9 +1,4 @@
 
-"use strict"
-
-
-
-
 const constants = {
 	charCodes: {
 		NEWLINE: 10
@@ -14,11 +9,8 @@ const constants = {
 	},
 	dictionaries: [
 		'koremutake',
-		'eng0'
+		'english'
 	]
 }
-
-
-
 
 module.exports = constants

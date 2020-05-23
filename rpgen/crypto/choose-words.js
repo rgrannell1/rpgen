@@ -1,59 +1,44 @@
 
-"use strict"
-
-
-
-
-const rand      = require('../crypto/rand-int')
-const commons   = require('../commons/commons')
+const rand = require('../crypto/rand-int')
+const commons = require('../commons/commons')
 const readWords = require('../fs/read-words')
-const entropy   = require('../crypto/entropy')
+const entropy = require('../crypto/entropy')
 
+/**
+ * Select random words
+ *
+ * @param {Object} args misc options
+ */
+const chooseWords = async args => {
+	const fpath = args.stdin
+		? null
+		: args.fpath
+	const content = await readWords(fpath)
 
+	const charset = commons.string.getCharset(content.join(''))
+	const words = content.map(word => word.toLowerCase())
 
+	if (words.length === 0) {
+		resolve()
+	}
 
+	let chosenWordsLength = 0
+	const randomWords = []
 
-const chooseWords = (args, callback) => {
+	for (let ith = 0; ith < args.number; ++ith) {
+		let idx = await rand.randInt(words.length)
+		let randomWord = words[idx]
+		randomWords.push(randomWord)
+		chosenWordsLength += randomWord.length
+	}
 
-	readWords(args.stdin ? null : args.fpath, (err, content) => {
-
-		if (err) {
-			throw err
+	return {
+		selected: randomWords,
+		entropies: {
+			dictEntropy: entropy.shannonEntropyOf(args.number, words.length),
+			charEntropy: entropy.shannonEntropyOf(chosenWordsLength, charset.length)
 		}
-
-		const charset    = commons.string.getCharset(content.join(''))
-		const words      = content.map(word => word.toLowerCase( ))
-
-		if (words.length === 0) {
-			return
-		}
-
-		commons.async.repeat(
-			args.number,
-			rand.randInt.bind({ }, words.length),
-			randIndices => {
-
-			const chosenWords       = randIndices.map(index => words[index])
-			const chosenWordsLength = chosenWords
-				.map(word =>  word.length)
-				.reduce((acc, num) => acc + num, 0)
-
-			callback({
-				selected: chosenWords,
-				entropies: {
-					dictEntropy: entropy.shannonEntropyOf(args.number,    words.length),
-					charEntropy: entropy.shannonEntropyOf(chosenWordsLength, charset.length)
-				}
-			})
-
-		})
-
-	})
-
+	}
 }
-
-
-
-
 
 module.exports = chooseWords

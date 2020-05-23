@@ -1,26 +1,12 @@
 
-"use strict"
-
-
-
-
 const crypto = require('crypto')
-
-
-
-
 
 /*
 convert 4 bytes into a 32 bit unsigned integer.
 */
-
 const convertBytesToInteger = buffer => {
 	return buffer.readUInt32BE( )
 }
-
-
-
-
 
 /*
 
@@ -31,28 +17,27 @@ there are 8 bits per byte, so we need to request a number of bytes n such that
 
 */
 
-const randInt32 = callback => {
-
-	crypto.randomBytes(4, (err, buffer) => {
-		callback(err, convertBytesToInteger(buffer))
-	})
-
-}
-
-const randFloat = callback => {
-	randInt32((err, number) => {
-		callback(err, number / Math.pow(2, 32))
+const randInt32 = async () => {
+	return new Promise((resolve, reject) => {
+		crypto.randomBytes(4, (err, buffer) => {
+			if (err) {
+				reject(err)
+			} else {
+				resolve(convertBytesToInteger(buffer))
+			}
+		})
 	})
 }
 
-const randInt = (upperBound, callback) => {
-	randFloat((err, float) => {
-		callback(err, Math.floor(float * upperBound))
-	})
+const randFloat = async () => {
+	const number = await randInt32()
+	return number / Math.pow(2, 32)
 }
 
-
-
+const randInt = async upperBound => {
+	const rfloat = await randFloat()
+	return Math.floor(rfloat * upperBound)
+}
 
 module.exports = {
 	randInt32,
