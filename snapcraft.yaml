@@ -1,7 +1,7 @@
 name:        rpgen
-version:     v0.2.0
-summary:     compile multiple scripts into a single cloud-init friendly script
-description: compile multiple scripts into a single cloud-init friendly script
+version:     v0.3.0
+summary:     Generate a high entropy, memorable password.
+description: Generate a high entropy, memorable password.
 confinement: strict
 base: core18
 grade: stable

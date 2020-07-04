@@ -1,6 +1,6 @@
 
 const commons = {
-	string: { }
+  string: { }
 }
 
 /**
@@ -11,7 +11,7 @@ const commons = {
  * @returns {Array<string>} an array of characters
  */
 commons.string.getCharset = chars => {
-	return [...new Set(chars.split(''))]
+  return [...new Set(chars.split(''))]
 }
 
 module.exports = commons

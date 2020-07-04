@@ -45,7 +45,7 @@ ${dictionaries}
   -h, --help                             Display this documentation.
 
 Arguments:
-  -                                      Read words from standard input.
+  -                                      Read words from standard input, rather than a file or built-in dictionary.
 
 Authors:
   ${constants.packageJson.author}

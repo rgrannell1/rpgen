@@ -6,13 +6,13 @@
  * @param {Object} data password data
  */
 const showOutput = (args, data) => {
-	let message = data.selected.join(args.delimiter)
+  let message = data.selected.join(args.delimiter)
 
-	if (!args.passwordOnly) {
-		message += `   ${data.entropies.dictEntropy}   ${data.entropies.charEntropy}`
-	}
+  if (!args.passwordOnly) {
+    message += `   ${data.entropies.dictEntropy}   ${data.entropies.charEntropy}`
+  }
 
-	console.log(message)
+  console.log(message)
 }
 
 module.exports = showOutput

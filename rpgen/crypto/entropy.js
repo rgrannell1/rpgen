@@ -9,7 +9,7 @@ const entropy = { }
  * @return {number} the log2 of an input number
  */
 const log2 = function (num) {
-	return Math.log(num) / Math.log(2)
+  return Math.log(num) / Math.log(2)
 }
 
 /**
@@ -21,7 +21,7 @@ const log2 = function (num) {
  * @returns {number} the shannon entropy
  */
 entropy.shannonEntropyOf = (len, base) => {
-	return Math.floor(len * log2(base))
+  return Math.floor(len * log2(base))
 }
 
 module.exports = entropy

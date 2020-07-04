@@ -1,5 +1,5 @@
 
-# Rpgen v0.2.0
+# Rpgen v0.3.0
 
 Generate a high entropy, memorable password.
 
@@ -54,6 +54,13 @@ for comparison, PHPs `rand( )` does not
 ### Dieharder
 
 rpgen was also tested against 100,000,000 (1.1Gb) random integers.
+
+## Changelog
+
+### v0.3.0
+
+- Fixed support for standard input; running `rpgen -` now behaves as expected
+- Rpgen now uses a default english-langugage dictionary. Running `rpgen -g english` was not an intuitive workflow. Language patches are welcome to support other languages!
 
 ## License
 
