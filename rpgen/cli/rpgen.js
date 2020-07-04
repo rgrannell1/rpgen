@@ -10,6 +10,7 @@ Name:
 
 Usage:
   rpgen
+  rpgen [-n NUM | --num NUM] [-p | --password-only] [-d DELIM | --delimiter DELIM] -
   rpgen (-f WORDS | --fpath WORDS)     [-n NUM | --num NUM] [-p | --password-only] [-d DELIM | --delimiter DELIM]
   rpgen (-g NAME  | --dictionary NAME) [-n NUM | --num NUM] [-p | --password-only] [-d DELIM | --delimiter DELIM]
   rpgen (-h | --help | --version)
