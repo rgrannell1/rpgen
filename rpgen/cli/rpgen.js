@@ -10,7 +10,7 @@ Name:
 
 Usage:
   rpgen
-  rpgen [-n NUM | --num NUM] [-p | --password-only] [-d DELIM | --delimiter DELIM] -
+  rpgen [-n NUM | --num NUM] [-p | --password-only] [-d DELIM | --delimiter DELIM]
   rpgen (-f WORDS | --fpath WORDS)     [-n NUM | --num NUM] [-p | --password-only] [-d DELIM | --delimiter DELIM]
   rpgen (-g NAME  | --dictionary NAME) [-n NUM | --num NUM] [-p | --password-only] [-d DELIM | --delimiter DELIM]
   rpgen (-h | --help | --version)
@@ -19,11 +19,14 @@ Description:
   Rpgen — Random password generator — chooses random words from an input dictionary to use as a password. The program outputs three space-seperated values:
 
   * a password created by combining randomly-chosen words from a dictionary.
-  * the naive entropy of a password of n words chosed from a dictionary of k words
-  * the entropy of the total number of letters chosen from a uniform character set of letters present in the dictionary. Note that the
+  * the "naive" entropy of a password of n words chosen from a dictionary of k words
+  * the entropy of the total number of letters chosen from a uniform character set of "letters" present in the dictionary. Note that the
     letter frequency will vary in most dictionaries, so this is only a rough estimate.
 
-  The latter two values are guides to help you determine how resistant a password is to brute-force guessing.
+  The latter two values are guides to help you determine how resistant a password is to brute-force guessing. A typical password output looks like:
+
+    rpgen --dictionary english
+    > bermuda-ur-cuneiform-flippers-sluggishness-dejects   96   23
 
 Security:
   Random words are selected using a cryptographically secure random number generator derived from the Node.js builtin 'crypto.randomBytes'. This RNG
@@ -31,9 +34,41 @@ Security:
 
   The strength of the password depends on the quality of the input dictionary. If a short or repetitive dictionary is chosen, generated passwords will be weak.
 
-Example:
-  rpgen --dictionary english
-  bermuda-ur-cuneiform-flippers-sluggishness-dejects   96   23
+Examples:
+  Generate a password using the provided english dictionary
+
+    rpgen --dictionary english
+    > bermuda-ur-cuneiform-flippers-sluggishness-dejects   96   23
+
+  Generate an eight-word password
+    rpgen -n 8 --dictionary english
+    > alabamians-magyar-diluted-questioned-bites-gurus-hardships-jilting   129   309
+
+  Generate an underscore delimited, four-word password
+    rpgen -n 4 --dictionary english -d _
+    > enables_convocation_neutralizer_starts   64   183
+
+  Generate an eight-word koremutake password, with no seperator between 'words'
+    rpgen -n 8 --dictionary koremutake -d ''
+    > grefrogefrynofranibi   56   87
+
+  Hide the entropy values on-output
+    rpgen --dictionary english -p
+    > fraught-submersible-adhesion-obstetrical-oboists-doctoral
+
+  Use a custom dictionary from a file-path.
+
+    rpgen --fpath my_newline_delimited_list_of_words.txt
+    > gould-ovations-deign-conveyances-prizefighters-mcleod   96   251
+
+  Convert output values to a JSON object, using column and jq utilies which you may need to install
+
+    rpgen | column -J --table-columns 'password,char_entropy,dict_entropy' | jq '.table[0]'
+    {
+      "password": "hawking-manfred-divinest-ganges-soaring-tittered",
+      "naive_entropy": "96",
+      "character_entropy": "225"
+    }
 
 Options:
   -f WORDS, --fpath WORDS                A path containing the words to derive the password from.
@@ -44,17 +79,14 @@ ${dictionaries}
   -p, --password-only                    Do not display the password entropy.
   -h, --help                             Display this documentation.
 
-Arguments:
-  -                                      Read words from standard input, rather than a file or built-in dictionary.
-
 Authors:
-  ${constants.packageJson.author}
+  Róisín Grannell <r.grannell2@gmail.com>
 Version:
   v${constants.packageJson.version}
 
 Copyright:
   The MIT License
-  Copyright (c) 2020 Róisín Grannell
+  Copyright (c) 2021 Róisín Grannell
   Permission is hereby granted, free of charge, to any person obtaining a copy of this
   software and associated documentation files (the "Software"), to deal in the Software
   without restriction, including without limitation the rights to use, copy, modify, merge,

@@ -1,5 +1,5 @@
 
-# Rpgen v0.3.0
+# Rpgen
 
 Generate a high entropy, memorable password.
 
@@ -56,6 +56,12 @@ for comparison, PHPs `rand( )` does not
 rpgen was also tested against 100,000,000 (1.1Gb) random integers.
 
 ## Changelog
+
+### v0.4.0
+
+- Granted snapcraft access to home file reads, fixing some issues with custom rpgen dictionaries
+- Added many examples, as requested by a displeased user. Every operation `rpgen` can perform is now documented
+- Removed stdin support, since it didn't work with snapcraft and is essentially unneeded given file-parameter arguments
 
 ### v0.3.0
 

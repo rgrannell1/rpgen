@@ -28,7 +28,7 @@ const rpgen = async rawArgs => {
 rpgen.preprocess = rawArgs => {
   return {
     number: parseInt(rawArgs['--num'], 10),
-    stdin: rawArgs['-'],
+    stdin: false,
     fpath: rpgen.preprocess.fpath(rawArgs),
     passwordOnly: rawArgs['--password-only'],
     delimiter: rawArgs['--delimiter']

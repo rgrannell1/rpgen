@@ -7,3 +7,6 @@ security/
 digital-ocean-token
 snapcraft/*
 !snapcraft.yaml
+*.snap
+yarn.lock
+.vscode/settings.json
